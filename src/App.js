@@ -50,7 +50,7 @@ const App = () => {
     const res = await fetch(`http://localhost:5000/tasks/${id}`, {
       method: 'DELETE',
     })
-    res.status === 200
+    res.status === 500
       ? setTasks(tasks.filter((task) => task.id !== id))
       : alert('Error Deleting This Task')
   }

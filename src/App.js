@@ -1,31 +1,12 @@
-import Header from './components/Header';
-import Tasks from './components/Tasks';
-import { useState } from 'react';
-import AddTask from './components/AddTask';
-// import Routing from './Routing'
 
-function App() {
+import { useState, useEffect } from 'react'
+import Header from './components/Header'
+import Tasks from './components/Tasks'
+import AddTask from './components/AddTask'
+
+const App = () => {
   const [showAddTask, setShowAddTask] = useState(false)
-  const [tasks, setTasks ] = useState([
-    {
-      id: 1,
-      text: 'Feed the Dogs',
-      day: 'Daily',
-      reminder: true,
-    },
-    {
-      id: 2,
-      text: 'Clip Dogs Nails',
-      day: 'bi-weekly',
-      reminder: true,
-    },
-    {
-      id: 3,
-      text: 'Grocery Shopping',
-      day: 'Wednesday of Every Week',
-      reminder: false,
-    }
-])
+  const [tasks, setTasks] = useState([])
 
 // Add task
   const addTask = (task) => {
@@ -39,19 +20,28 @@ function App() {
     setTasks(tasks.filter((task) => task.id !== id))
 }
 
-  return (
-    <div className="container">
-      <Header onAdd={() => setShowAddTask
-      (!showAddTask)} showAdd={showAddTask} />
-      {showAddTask && <AddTask onAdd={addTask} />}
-      {tasks.length > 0 ?(
-      <Tasks tasks={tasks}
-      onDelete={deleteTask} />
-    ) : (
-      'No Tasks at This Time'
-    )}
-    </div>
-  );
-}
+return (
+    
+    <div className='container'>
+      <Header onAdd={() => 
+        setShowAddTask(!showAddTask)}
+        showAdd={showAddTask}
+      />
+        <>
+          {showAddTask && <AddTask onAdd={addTask} />}
+          {tasks.length > 0 ? (
+            <Tasks 
+              tasks={tasks} 
+              onDelete={deleteTask}
+            />
+          ) : (
+            'No Tasks To Show'
+          )}
+        </>
+    </ div>
+  )
+};
+  
 
-export default App;
+
+export default App

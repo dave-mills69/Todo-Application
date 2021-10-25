@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom'
+import Dashboard from './Dashboard'
 
 const Footer = () => {
   return (
     <footer>
-      <Link to='/about'>About</Link> <hr></hr>
-      <Link to='/Dashboard'>Dashboard</Link>
+      <hr></hr>
+      <Link to='/about'>About</Link> <br></br>
+      <Link to='/dashboard'>Dashboard</Link><br></br>
+      <Link to='/'>Task Page</Link>
     </footer>
   )
 }

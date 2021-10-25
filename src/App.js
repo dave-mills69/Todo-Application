@@ -72,13 +72,6 @@ const App = () => {
         />
 
 
-        {/* <ul>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-        </ul> */}
-
-
         <Route
           path='/'
           exact
@@ -97,6 +90,7 @@ const App = () => {
           )}
         />
         <Route path='/About' component={About} />
+        <Route path='/Dashboard' component={Dashboard} />
         <Footer />
       </div>
     </Router>

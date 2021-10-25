@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
 import About from './components/About'
+import Dashboard from './components/Dashboard'
+
+
 
 const App = () => {
   const [showAddTask, setShowAddTask] = useState(false)
@@ -67,6 +70,17 @@ const App = () => {
           onAdd={() => setShowAddTask(!showAddTask)}
           showAdd={showAddTask}
         />
+        <ul>
+          <li>
+            <Link to="/">Tasks</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
+        </ul>
         <Route
           path='/'
           exact

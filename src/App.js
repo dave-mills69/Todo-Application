@@ -20,7 +20,7 @@ const App = () => {
     setTasks(tasks.filter((task) => task.id !== id))
 }
 
-return (
+  return (
     
     <div className='container'>
       <Header onAdd={() => 

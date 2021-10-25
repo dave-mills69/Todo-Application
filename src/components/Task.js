@@ -1,3 +1,4 @@
+impot { FaTimes } from 'react-icons/fa';
 
 const Task = ({ task }) => {
     return (

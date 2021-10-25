@@ -8,6 +8,19 @@ const App = () => {
   const [showAddTask, setShowAddTask] = useState(false)
   const [tasks, setTasks] = useState([])
 
+  // useEffect
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const res = await fetch('http://
+      localhost5000/tasks')
+      const data = await res.json()
+
+      console.log(data)
+    }
+
+    fetchTasks()
+  }, [])
+
 // Add task
   const addTask = (task) => {
     const id = Math.floor(Math.random() * 999) + 1

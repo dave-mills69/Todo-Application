@@ -7,17 +7,17 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Sofia Pro', sans-serif;
 }
 
 .container {
-  max-width: 500px;
-  margin: 30px auto;
+  max-width: 700px;
+  margin: 40px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
+  border: 5px solid blueviolet;
   padding: 30px;
-  border-radius: 5px;
+  border-radius: 50px;
 }
 
 .header {

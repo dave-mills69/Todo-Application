@@ -5,6 +5,7 @@ import AddTask from './components/AddTask';
 // import Routing from './Routing'
 
 function App() {
+  const [showAddTask, setShowAddTask] = useState(false)
   const [tasks, setTasks ] = useState([
     {
       id: 1,
@@ -26,10 +27,12 @@ function App() {
     }
 ])
 
-// // Add task
-//   const addTask = () => {
-//     console.log(task)
-//   }
+// Add task
+  const addTask = (task) => {
+    const id = Math.floor(Math.random() * 999) + 1
+    const newTask ={id, ...task}
+    setTasks([...tasks, newTask])
+  }
 
 // Delete a Task
   const deleteTask = (id) => {
@@ -39,7 +42,7 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <AddTask />
+      {showAddTask && <AddTask onAdd={addTask} />}
       {tasks.length > 0 ?(
       <Tasks tasks={tasks}
       onDelete={deleteTask} />

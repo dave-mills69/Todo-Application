@@ -41,9 +41,7 @@ body {
   font-family: inherit;
 }
 
-.btn:focus {
-  outline: none;
-}
+
 
 .btn:active {
   transform: scale(0.98);
@@ -61,9 +59,6 @@ body {
   cursor: pointer;
 }
 
-.task.reminder {
-  border-left: 5px solid green;
-}
 
 .task h3 {
   display: flex;
@@ -109,4 +104,13 @@ body {
 footer {
   margin-top: 30px;
   text-align: center;
+}
+
+h4.abouts {
+  margin-top: 30px;
+  text-align: center;
+}
+
+h4.a {
+  text-align: end;
 }

@@ -70,17 +70,15 @@ const App = () => {
           onAdd={() => setShowAddTask(!showAddTask)}
           showAdd={showAddTask}
         />
+
+
         {/* <ul>
-          <li>
-            <Link to="/">Tasks</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
           <li>
             <Link to="/dashboard">Dashboard</Link>
           </li>
         </ul> */}
+
+
         <Route
           path='/'
           exact

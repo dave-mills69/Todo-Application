@@ -1,12 +1,12 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 
 const About = () => {
-    return (
-        <div>
-            <h3>Version 1.0.0</h3>
-            <a href='/'>Go Back to Home Page</a>
-        </div>
-    )
+  return (
+    <div>
+      <h4>Version 1.0.0</h4>
+      <Link to='./about' >About</Link>
+    </div>
+  )
 }
 
 export default About

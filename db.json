@@ -1,29 +1,3 @@
 {
-  "tasks": [
-    {
-      "text": "hello boys",
-      "day": "tomorrow or whenever",
-      "id": 3
-    },
-    {
-      "text": "welp here we go again",
-      "day": "hello",
-      "id": 4
-    },
-    {
-      "text": "Talk To Jeebus",
-      "day": "idk  whenever dood",
-      "id": 5
-    },
-    {
-      "text": "hey",
-      "day": "ho",
-      "id": 6
-    },
-    {
-      "text": "pet dog",
-      "day": "NOW",
-      "id": 7
-    }
-  ]
+  "tasks": []
 }

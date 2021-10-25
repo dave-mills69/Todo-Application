@@ -10,6 +10,7 @@ body {
   font-family: 'Sofia Pro', sans-serif;
 }
 
+
 .container {
   max-width: 700px;
   margin: 40px auto;
@@ -24,7 +25,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .btn {
@@ -106,12 +107,15 @@ footer {
   text-align: center;
 }
 
-h4.abouts {
-  margin-top: 30px;
+/* .header h1 {
+  font-size: 2em;
+  text-align: center;
+  padding: 3px 170px;
+  align-items: center;
+  justify-content: space-between;
+} */
+
+h2 {
+  margin: auto;
   text-align: center;
 }
-
-h4.a {
-  text-align: end;
-}
-

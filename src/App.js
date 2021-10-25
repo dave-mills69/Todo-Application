@@ -1,8 +1,10 @@
-
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
+import Footer from './components/Footer'
+import About from './components/About'
 
 const App = () => {
   const [showAddTask, setShowAddTask] = useState(false)
@@ -10,28 +12,55 @@ const App = () => {
 
   // useEffect
   useEffect(() => {
-    const fetchTasks = async () => {
-      const res = await fetch('http://
-      localhost5000/tasks')
-      const data = await res.json()
-
-      console.log(data)
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks()
+      setTasks(tasksFromServer)
     }
 
-    fetchTasks()
+    getTasks()
   }, [])
 
-// Add task
-  const addTask = (task) => {
-    const id = Math.floor(Math.random() * 999) + 1
-    const newTask ={id, ...task}
-    setTasks([...tasks, newTask])
+  // fetching task from server
+    const fetchTasks = async () => {
+      const res = await fetch('http://localhost:5000/tasks')
+      const data = await res.json()
+  
+      return data
+    }
+
+  // Fetch Task
+  const fetchTask = async (id) => {
+    const res = await fetch(`http://localhost:5000/tasks/${id}`)
+    const data = await res.json()
+
+    return data
   }
 
-// Delete a Task
-  const deleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id))
-}
+  // Add Task
+  const addTask = async (task) => {
+    const res = await fetch('http://localhost:5000/tasks', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(task),
+    })
+
+    const data = await res.json()
+
+    setTasks([...tasks, data])
+  }
+
+  // Delete Task
+  const deleteTask = async (id) => {
+    const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+      method: 'DELETE',
+    })
+    //We should control the response status to decide if we will change the state or not.
+    res.status === 200
+      ? setTasks(tasks.filter((task) => task.id !== id))
+      : alert('Error Deleting This Task')
+  }
 
   return (
     
@@ -50,6 +79,7 @@ const App = () => {
           ) : (
             'No Tasks To Show'
           )}
+      <Footer />
         </>
     </ div>
   )

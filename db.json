@@ -1,14 +1,9 @@
 {
   "tasks": [
     {
-      "text": "clean room",
-      "day": "tomorrow after school",
+      "text": "dad",
+      "day": "dada",
       "id": 1
-    },
-    {
-      "text": "feed dogs",
-      "day": "at 5:30pm",
-      "id": 2
     }
   ]
 }
